@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding:0;
+}
+
+.container{
+    height: 300px;
+    width: 800px;
+    background-color: rgb(85, 85, 240);
+}
+
+button{
+    width: 110px;
+    background-color: coral;
+    margin-top: 20px;
+}
+
+.form-label{
+    font-size: 30px;
+}
+
