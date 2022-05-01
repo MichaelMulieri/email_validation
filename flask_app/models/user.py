@@ -33,7 +33,15 @@ class User:
     @staticmethod
     def validate_email(user):
         is_valid = True
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        results = connectToMySQL('email_validation').query_db(query, user)
+        if len(results) >= 1:
+            flash("Email already taken")
+            is_valid = False 
         if not EMAIL_REGEX.match(user['email']):
             flash("Invalid email address!")
             is_valid = False
+        if is_valid:
+            flash("You added your email!")
         return is_valid
+
